@@ -12,7 +12,7 @@ input_text = f"Can you summarize this sentence, {sentence}"
 input_ids = tokenizer.encode(input_text, return_tensors="pt")
 
 # Generate summary
-output = model.generate(input_ids)
+output = model.generate(input_ids, max_length=200)
 
 # Decode the generated summary
 summary = tokenizer.decode(output[0], skip_special_tokens=True)
